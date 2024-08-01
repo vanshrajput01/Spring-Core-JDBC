@@ -13,9 +13,10 @@ public class ApiController {
 	private ApiService apiService;
 	
 	@GetMapping(value = "/createTable")
-	public String addData() {
+	public String CreateTable() {
 		return this.apiService.createTable();
 		
 	}
+	
 
 }
