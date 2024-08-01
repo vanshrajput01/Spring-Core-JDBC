@@ -17,4 +17,9 @@ public class ApiServiceImpl implements ApiService{
 		return this.apiRepo.createTbl();
 	}
 
+	@Override
+	public String AddData(int id, String name, String city) {
+		return this.apiRepo.AddDataInfo(id,name,city);
+	}
+
 }

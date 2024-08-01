@@ -1,6 +1,7 @@
 package com.example.demo.ApiRepository;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.sql.Statement;
 
@@ -32,6 +33,30 @@ public class ApiRespositoryCls {
 		} catch (SQLException e) {
 			return e.getMessage();
 		}
+		
+		
+		
+	}
+
+	public String AddDataInfo(int id, String name, String city) {
+		
+		String q = "insert into xxcust_emp_tbl(id,name,city)\r\n"
+				+ "values (?,?,?)";
+		
+		try {
+			Connection conn = dataSource.getConnection();
+			PreparedStatement ps = conn.prepareStatement(q);
+			ps.setInt(1, id);
+			ps.setString(2, name);
+			ps.setString(3, city);
+			
+			ps.executeUpdate();
+			return id + " id Data inserted SuccessFully!!";
+		} catch (SQLException e) {
+			
+			return e.getMessage();
+		}
+		
 		
 		
 		
