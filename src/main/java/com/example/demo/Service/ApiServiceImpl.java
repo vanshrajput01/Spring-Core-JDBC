@@ -22,4 +22,10 @@ public class ApiServiceImpl implements ApiService{
 		return this.apiRepo.AddDataInfo(id,name,city);
 	}
 
+	@Override
+	public String UpdateData(int id, String name, String city) {
+		
+		return this.apiRepo.updateDataInfo(id,name,city);
+	}
+
 }

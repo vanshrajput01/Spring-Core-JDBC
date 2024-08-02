@@ -61,6 +61,34 @@ public class ApiRespositoryCls {
 		
 		
 	}
+
+	public String updateDataInfo(int id, String name, String city) {
+		
+		String q = "update xxcust_emp_tbl\r\n"
+				+ "set name = ? , city = ?\r\n"
+				+ "where id = ?";
+		
+		try {
+			Connection conn = dataSource.getConnection();
+			
+			PreparedStatement pstm = conn.prepareStatement(q);
+			
+			pstm.setString(1, name);
+			pstm.setString(2,city);
+			pstm.setInt(3, id);
+			
+			
+			pstm.executeUpdate();
+			
+			return id + " id Update Data SuccessFully!!"; 
+		} catch (SQLException e) {
+			
+			return e.getMessage();
+		}
+		
+		
+		
+	}
 	
 	
 	

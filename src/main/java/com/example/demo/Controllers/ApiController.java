@@ -29,5 +29,16 @@ public class ApiController {
 		
 	}
 	
+	@GetMapping("/UpdateData")
+	public String UpdateData(@RequestParam(name = "id") int id,
+							 @RequestParam(name = "name") String name,
+							 @RequestParam(name = "city_name") String city) {
+		
+		return this.apiService.UpdateData(id,name,city);
+	}
+
+	
+	
+	
 
 }
