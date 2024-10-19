@@ -89,7 +89,7 @@ public class ApiRespositoryCls {
 		
 		
 	}
-
+// first create input class
 		public String insertData(GetInputCls input) {
 		
 		String result = null;
