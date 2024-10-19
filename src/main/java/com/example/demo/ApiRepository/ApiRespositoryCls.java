@@ -89,6 +89,37 @@ public class ApiRespositoryCls {
 		
 		
 	}
+
+		public String insertData(GetInputCls input) {
+		
+		String result = null;
+		
+		try {
+			Connection connection = dataSource.getConnection();
+			CallableStatement callableStatement = connection.prepareCall("call here procedure");
+			ObjectMapper objectMapper = new ObjectMapper();
+			String inputString;
+			try {
+				inputString = objectMapper.writeValueAsString(input);
+				callableStatement.setString(1,inputString);
+				callableStatement.registerOutParameter(2, Types.VARCHAR);
+				
+				callableStatement.execute();
+				 result = callableStatement.getString(2);
+				
+			} catch (JsonProcessingException e) {
+				e.printStackTrace();
+			}
+			
+			
+		
+		} catch (SQLException e) {
+			
+			e.printStackTrace();
+		}
+		return result;
+	}
+	
 	
 	
 	
