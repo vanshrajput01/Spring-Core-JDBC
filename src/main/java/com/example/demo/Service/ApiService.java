@@ -10,6 +10,7 @@ public interface ApiService {
 
 	String UpdateData(int id, String name, String city);
 
+	String insertData(GetInputCls input);
 
 
 	
