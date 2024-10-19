@@ -28,4 +28,9 @@ public class ApiServiceImpl implements ApiService{
 		return this.apiRepo.updateDataInfo(id,name,city);
 	}
 
+		@Override
+	public String insertData(GetInputCls input) {
+		return this.apirepo.insertData(input);
+	}
+
 }
