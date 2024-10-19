@@ -36,6 +36,13 @@ public class ApiController {
 		
 		return this.apiService.UpdateData(id,name,city);
 	}
+###########################################################  how to save data using Procedure   ###########################################################
+
+	
+	@PostMapping("/insert-data")
+	public String insertData(@RequestBody GetInputCls input) {
+		return this.service.insertData(input);
+	}
 
 	
 	
